@@ -138,10 +138,10 @@ if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')  # для Nginx
 
 # путь хранения фото
-MEDIA_ROOT = os.path.join(BASE_DIR, 'photo/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # url для управления медиафайлами
-MEDIA_URL = '/photo/'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
