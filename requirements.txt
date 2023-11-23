@@ -23,3 +23,5 @@ stack-data==0.6.3
 traitlets==5.13.0
 typing_extensions==4.8.0
 wcwidth==0.2.11
+
+django-crispy-forms~=2.1

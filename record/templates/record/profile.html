@@ -1,0 +1,31 @@
+{% extends 'record/base.html' %}
+
+{% block title %}Профиль{% endblock %}
+
+
+<!--Верхняя навигационная панель-->
+{% block nav_profile %}
+
+    <li class="nav-item"><a role="button" class="nav-link text-white" hx-post="{% url 'logout' %}" hx-push-url="/" hx-target="closest body">выход</a></li>
+    <li class="nav-item"><a href="" class="ms-2 nav-link text-white" >профиль</a></li>
+
+{% endblock %}
+
+
+{% block profile %}
+
+{% if user.is_authenticated %}
+    <h1>{{ request.user.username }}</h1>
+{% else %}
+    <h1>Вы не зарегистрированы</h1>
+{% endif %}
+
+<script>
+    document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+</script>
+{% endblock %}
+
+
+

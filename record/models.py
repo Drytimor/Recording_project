@@ -3,13 +3,13 @@ from Recording_project.settings import AUTH_USER_MODEL
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.db.models import F, Q
-
 from record.validators import phone_validator, image_validator
 
 
 class User(AbstractUser):
     email = models.EmailField(verbose_name='Email',
                               unique=True,
+                              help_text='Введите ваш Email',
                               error_messages={
                                   "unique": "такой email адрес уже зарегистрирован"}
                               )
