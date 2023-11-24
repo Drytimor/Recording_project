@@ -1,0 +1,11 @@
+{% load crispy_forms_tags %}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Регистрация</h5>
+        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+    </div>
+    <div class="modal-body" >
+        {% crispy form %}
+    </div>
+</div>

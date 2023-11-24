@@ -7,16 +7,16 @@ from .models import User
 
 
 class CreateUserForm(BaseUserCreationForm):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-
+        self.helper.layout = Layout(
+        )
         self.helper.form_id = 'create-user-form'
         self.helper.attrs = {
             'hx-post': reverse_lazy('create_user'),
             'hx-target': '#create-user-form',
-            'hx-swap': 'outerHTML'
+            'hx-swap': 'outerHTML',
         }
         self.helper.add_input(Submit('submit', 'Зарегистрироваться'))
 
